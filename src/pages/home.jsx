@@ -16,7 +16,6 @@ const Home = () => {
         client.get('?_limit=10').then((response) => {
             setIsLoaded(true)
             setUsers(response.data)
-            console.log(users)
         })
     }, [])
 
@@ -27,13 +26,6 @@ const Home = () => {
     } else {
         return (
             <>
-                <div>
-                    <Link to={`/`}>Home</Link>
-                    &nbsp;|&nbsp;
-                    <Link to={`/about`}>About</Link>
-                    &nbsp;|&nbsp;
-                    <Link to={`/contact`}>Contact Us</Link>
-                </div>
                 <ul>
                     {users.map(user => (
                         <li key={user.id}>
